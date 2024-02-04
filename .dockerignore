@@ -1,0 +1,9 @@
+.github/
+assignment/
+docs/
+flowchart/
+infrastructure/
+notebooks/
+scripts/
+venv/
+README.md
