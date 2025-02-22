@@ -74,14 +74,14 @@ class ModelEvaluationConfig:
     changed_threshold_score: float = MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE
     bucket_name: str = MODEL_PUSHER_BUCKET_NAME
     s3_model_key_path: str = MODEL_FILE_NAME
+    local_model_path: str = MODEL_FILE_NAME
 
 
 @dataclass
 class ModelPusherConfig:
     bucket_name: str = MODEL_PUSHER_BUCKET_NAME
     s3_model_key_path: str = MODEL_FILE_NAME
-
-
+    local_model_path: str = MODEL_FILE_NAME
 
 
 
@@ -92,7 +92,7 @@ class PredictionPipelineConfig:
     model_file_name: str = MODEL_FILE_NAME
     model_bucket_name: str = prediction_pipeline.MODEL_BUCKET_NAME
     output_file_name: str = prediction_pipeline.PREDICTION_OUTPUT_FILE_NAME
-
+    local_model_path: str = MODEL_FILE_NAME
 
 
 class PCAConfig:

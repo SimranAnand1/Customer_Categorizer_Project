@@ -29,10 +29,17 @@ class CustomerData:
         
     def get_input_dataset(self, column_schema:dict, input_data):
         columns = column_schema.keys()
-        
-        input_dataset = pd.DataFrame([input_data], columns = columns)
+        input_dataset = pd.DataFrame([input_data], columns=columns)
+
         for key, value in column_schema.items():
-            input_dataset[key] = input_dataset[key].astype(value)
+            try:
+                # Ensure categorical columns remain strings
+                if key in ["Education", "Marital_Status", "Parental_Status"]:
+                    input_dataset[key] = input_dataset[key].astype(str)
+                else:
+                    input_dataset[key] = input_dataset[key].astype(value)
+            except ValueError as e:
+                raise ValueError(f"Error converting {key} to {value}: {e}")
         
         return input_dataset
 
@@ -105,8 +112,7 @@ class PredictionPipeline:
         try:
             prediction_config = PredictionPipelineConfig()
             model = CustomerClusterEstimator(
-                bucket_name= prediction_config.model_bucket_name,
-                model_path= prediction_config.model_file_name
+                model_path= prediction_config.local_model_path
             )
                 
             return model

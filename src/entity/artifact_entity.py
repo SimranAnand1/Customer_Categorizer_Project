@@ -47,8 +47,10 @@ class ModelEvaluationArtifact:
 
 @dataclass
 class ModelPusherArtifact:
-    bucket_name:str
-    s3_model_path:str 
+    """_summary_
+    """    
+    local_model_path:str
+
 
 
     

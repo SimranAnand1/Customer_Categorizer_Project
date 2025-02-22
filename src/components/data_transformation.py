@@ -86,7 +86,7 @@ class DataTransformation:
             dataset["Total Promo"] =  dataset["AcceptedCmp1"]+ dataset["AcceptedCmp2"]+ dataset["AcceptedCmp3"]+ dataset["AcceptedCmp4"]+ dataset["AcceptedCmp5"]
 
             ## The following code works out how long the customer has been with the company and store the total number of promotions the customers responded to
-            dataset['Dt_Customer']=pd.to_datetime(dataset['Dt_Customer'])
+            dataset['Dt_Customer']=pd.to_datetime(dataset['Dt_Customer'], format="%d-%m-%Y", errors="coerce")
             today=datetime.today()
             dataset['Days_as_Customer']=(today-dataset['Dt_Customer']).dt.days
             dataset['Offers_Responded_To']=dataset['AcceptedCmp1']+dataset['AcceptedCmp2']+dataset['AcceptedCmp3']+dataset['AcceptedCmp4']+dataset['AcceptedCmp5']+dataset['Response']

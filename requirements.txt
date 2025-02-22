@@ -2,7 +2,9 @@ boto3==1.24.84
 botocore-stubs==1.27.86
 dill==0.3.5.1
 dnspython==2.2.1
-evidently==0.1.58.dev0
+matplotlib
+seaborn
+# evidently
 fastapi==0.78.0
 from-root==1.0.2
 httptools==0.5.0
@@ -16,7 +18,8 @@ types-s3transfer==0.6.0.post4
 uvicorn==0.18.3
 watchfiles==0.17.0
 websockets==10.3
-wincertstore==0.2
+# wincertstore==0.2
 xgboost==1.6.2
+catboost
 python-multipart
 neuro_mf

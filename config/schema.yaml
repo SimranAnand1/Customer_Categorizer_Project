@@ -1,11 +1,11 @@
 columns:
   - Year_Birth: int64
-  - Education : object
-  - Marital_Status : object
+  - Education : int64
+  - Marital_Status : int64
   - Income : float64
   - Kidhome : int64
   - Teenhome : int64
-  - Dt_Customer : object
+  - Dt_Customer : int64
   - Recency     : int64
   - MntWines    : int64
   - MntFruits   : int64

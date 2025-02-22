@@ -18,6 +18,11 @@ from src.entity.config_entity import Prediction_config
 from src.utils.main_utils import MainUtils,load_numpy_array_data
 from src.ml.metric import calculate_metric
 from src.entity.artifact_entity import ClassificationMetricArtifact
+import os
+print(os.getenv("AWS_ACCESS_KEY_ID"))
+print(os.getenv("AWS_SECRET_ACCESS_KEY"))
+print(os.getenv("AWS_DEFAULT_REGION"))
+
 
 
 @dataclass
@@ -52,12 +57,10 @@ class ModelEvaluation:
 
     def get_best_model(self) -> Optional[CustomerClusterEstimator]:
         try:
-            bucket_name = self.model_eval_config.bucket_name
-            model_path = self.model_eval_config.s3_model_key_path
-            customer_cluster_estimator = CustomerClusterEstimator(bucket_name=bucket_name,
-                                               model_path=model_path)
+            model_path = self.model_eval_config.local_model_path
+            customer_cluster_estimator = CustomerClusterEstimator(model_path=model_path)
 
-            if customer_cluster_estimator.is_model_present(model_path=model_path):
+            if customer_cluster_estimator.is_model_present():
                 return customer_cluster_estimator
             return None
         except Exception as e:
