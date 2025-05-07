@@ -110,6 +110,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+customer_categorizer
 env/
 venv/
 ENV/

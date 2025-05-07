@@ -4,7 +4,7 @@ dill==0.3.5.1
 dnspython==2.2.1
 matplotlib
 seaborn
-# evidently
+evidently==0.1.59.dev0
 fastapi==0.78.0
 from-root==1.0.2
 httptools==0.5.0
@@ -23,3 +23,4 @@ xgboost==1.6.2
 catboost
 python-multipart
 neuro_mf
+from-root
