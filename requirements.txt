@@ -23,4 +23,3 @@ xgboost==1.6.2
 catboost
 python-multipart
 neuro_mf
-from-root

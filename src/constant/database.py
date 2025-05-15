@@ -1,2 +1,2 @@
 DATABASE_NAME = "ineuron"
-COLLECTION_NAME = "customer_segmentation"
+COLLECTION_NAME = "marketing_campaign"
