@@ -3,6 +3,10 @@ import certifi
 import pymongo
 import pandas as pd
 
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
+
 # Get the CA certificate for secure connection
 ca = certifi.where()
 

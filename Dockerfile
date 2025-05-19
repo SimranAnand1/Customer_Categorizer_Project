@@ -6,8 +6,4 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
-RUN pip install certifi
-
-RUN pip install evidently
-
 CMD ["python3","app.py"]

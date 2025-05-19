@@ -65,7 +65,7 @@ class DataTransformation:
             dataset = datasets[key]
             
             ##  creating a new field to store the Age of the customer
-            dataset['Age']=2022-dataset['Year_Birth']   
+            dataset['Age']=2025-dataset['Year_Birth']   
 
             ###  recoding the customer's education level to numeric form (0: high-school, 1: diploma, 2: bachelors, 3: masters, and 4: doctorates)
             dataset["Education"].replace({"Basic":0,"2n Cycle":1, "Graduation":2, "Master":3, "PhD":4},inplace=True)  

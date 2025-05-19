@@ -116,6 +116,7 @@ env/
 venv/
 ENV/
 env.bak/
+src/constant/env_variable.py
 venv.bak/
 
 # Spyder project settings
